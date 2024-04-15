@@ -1,0 +1,72 @@
+C:\TRETYAKOV\cvfsdg\hntshd\bin\Debug\hntshd.exe.config
+C:\TRETYAKOV\cvfsdg\hntshd\bin\Debug\hntshd.exe
+C:\TRETYAKOV\cvfsdg\hntshd\bin\Debug\hntshd.pdb
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\hntshd.csproj.AssemblyReference.cache
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\MainWindow.g.cs
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\WindowUser.g.cs
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\App.g.cs
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\hntshd_MarkupCompile.cache
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\hntshd_MarkupCompile.lref
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\MainWindow.baml
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\WindowUser.baml
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\hntshd.g.resources
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\hntshd.Properties.Resources.resources
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\hntshd.csproj.GenerateResource.cache
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\hntshd.csproj.CoreCompileInputs.cache
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\hntshd.exe
+C:\TRETYAKOV\cvfsdg\hntshd\obj\Debug\hntshd.pdb
+C:\Users\Артём\Desktop\cvfsdg\hntshd\bin\Debug\hntshd.exe.config
+C:\Users\Артём\Desktop\cvfsdg\hntshd\bin\Debug\hntshd.exe
+C:\Users\Артём\Desktop\cvfsdg\hntshd\bin\Debug\hntshd.pdb
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\hntshd.csproj.AssemblyReference.cache
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\MainWindow.g.cs
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\WindowUser.g.cs
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\App.g.cs
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\hntshd_MarkupCompile.cache
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\hntshd_MarkupCompile.lref
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\MainWindow.baml
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\WindowUser.baml
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\hntshd.g.resources
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\hntshd.Properties.Resources.resources
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\hntshd.csproj.GenerateResource.cache
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\hntshd.csproj.CoreCompileInputs.cache
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\hntshd.exe
+C:\Users\Артём\Desktop\cvfsdg\hntshd\obj\Debug\hntshd.pdb
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\bin\Debug\hntshd.exe.config
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\bin\Debug\hntshd.exe
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\bin\Debug\hntshd.pdb
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\hntshd.csproj.AssemblyReference.cache
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\MainWindow.g.cs
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\WindowUser.g.cs
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\App.g.cs
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\hntshd_MarkupCompile.cache
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\hntshd_MarkupCompile.lref
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\MainWindow.baml
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\WindowUser.baml
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\hntshd.g.resources
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\hntshd.Properties.Resources.resources
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\hntshd.csproj.GenerateResource.cache
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\hntshd.csproj.CoreCompileInputs.cache
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\hntshd.exe
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd\obj\Debug\hntshd.pdb
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\hntshd.csproj.AssemblyReference.cache
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\Clients.g.cs
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\MainWindow.g.cs
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\WindowUser.g.cs
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\App.g.cs
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\hntshd_MarkupCompile.cache
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\hntshd_MarkupCompile.lref
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\hntshd.exe
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\hntshd.pdb
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\Bookings.g.cs
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\bin\Debug\hntshd.exe.config
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\bin\Debug\hntshd.exe
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\bin\Debug\hntshd.pdb
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\Bookings.baml
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\Clients.baml
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\MainWindow.baml
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\WindowUser.baml
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\hntshd.g.resources
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\hntshd.Properties.Resources.resources
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\hntshd.csproj.GenerateResource.cache
+C:\Users\artmp\OneDrive\Рабочий стол\hntshd2\obj\Debug\hntshd.csproj.CoreCompileInputs.cache

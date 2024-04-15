@@ -1,0 +1,84 @@
+﻿<Window x:Class="hntshd.Clients"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:hntshd"
+        mc:Ignorable="d"
+        Title="Clients" 
+               Height="450"
+        Width="800">
+    <Grid>
+        <Menu Height="25"
+              VerticalAlignment="Top">
+            <MenuItem Header="Base">
+                <MenuItem Header="Select" Click="ESelect_Click"></MenuItem>
+                <MenuItem Header="Insert" Click="EInsert_Click"></MenuItem>
+                <MenuItem Header="Update" Click="EUpdate_Click"></MenuItem>
+                <MenuItem Header="Delete" Click="EDelete_Click"></MenuItem>
+                <Separator />
+                <MenuItem Header="Clear"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Window">
+                <MenuItem Header="Tours" Click="EWindowUser_Click"></MenuItem>
+                <MenuItem Header="Bookings" Click="EBookings_Click"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="Help">
+                <MenuItem Header="Tools"></MenuItem>
+                <MenuItem Header="About" Click="EAbout_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <TextBox HorizontalAlignment="Left"
+                 Height="23"
+                 Margin="24,40,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="120" 
+                 x:Name="tb_ClientID"/>
+        <Label Content="ClientID"
+               HorizontalAlignment="Left"
+               Margin="152,38,0,0"
+               VerticalAlignment="Top" />
+        <TextBox HorizontalAlignment="Left"
+                 Height="23"
+                 Margin="24,80,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top"
+                 Width="120" 
+                 x:Name="tb_Name"/>
+        <Label Content="Name"
+               HorizontalAlignment="Left"
+               Margin="153,78,0,0"
+               VerticalAlignment="Top" />
+        <Label Content="Email"
+               HorizontalAlignment="Left"
+               Margin="156,118,0,0"
+               VerticalAlignment="Top" />
+        <Label Content="Phone"
+               HorizontalAlignment="Left"
+               Margin="156,156,0,0"
+               VerticalAlignment="Top" />
+        <DataGrid HorizontalAlignment="Left"
+                  Height="353"
+                  Margin="251,44,0,0"
+                  VerticalAlignment="Top"
+                  Width="519" 
+                  x:Name="dg"
+                  MouseLeftButtonUp="dg_MouseLeftButtonUp"/>
+        <TextBox HorizontalAlignment="Left"
+            Height="23"
+            Margin="24,118,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="120" 
+            x:Name="tb_Email"/>
+        <TextBox HorizontalAlignment="Left"
+            Height="23"
+            Margin="24,159,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top"
+            Width="120" 
+            x:Name="tb_Phone"/>
+
+    </Grid>
+</Window>
