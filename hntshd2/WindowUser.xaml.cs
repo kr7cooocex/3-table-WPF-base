@@ -108,6 +108,7 @@ namespace hntshd
 
             FirstRecordList = new List<FirstRecord2>();
 
+
             adapter.Fill(dt);
 
             for (i = 0; i <= dt.Rows.Count - 1; i++)
@@ -152,7 +153,7 @@ namespace hntshd
             cmd.Parameters.Add("@Destination", SqlDbType.VarChar, 50).Value = tb_Destination.Text;
             cmd.Parameters.Add("@StartDate", SqlDbType.Date).Value = DP_StartDate.Text;
             cmd.Parameters.Add("@EndDate", SqlDbType.Date).Value = DP_EndDate.Text;
-            cmd.Parameters.Add("@Price", SqlDbType.VarChar, 50).Value = tb_Price.Text;
+            cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = decimal.Parse(tb_Price.Text);
             DataTable dt = new DataTable();
             using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
             {
@@ -163,6 +164,7 @@ namespace hntshd
                 adapter.InsertCommand = cmd;
                 adapter.Update(dt);
             }
+            Refresh();
         }
 
 
@@ -205,6 +207,8 @@ namespace hntshd
                 throw new ArgumentException("Укажите дату в поле EndDate");
             }
 
+            cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = decimal.Parse(tb_Price.Text);
+
             adapter.Fill(dt);
 
             int selectedIndex = dg.SelectedIndex;
@@ -237,6 +241,7 @@ namespace hntshd
             else
             {
                 MessageBox.Show("Изменения внесены.");
+                Refresh();
             }
         }
         private void EDelete_Click(object sender, RoutedEventArgs e)
@@ -297,16 +302,32 @@ namespace hntshd
 
         private void EBookings_Click(object sender, RoutedEventArgs e)
         {
-            if (Application.Current.Windows.OfType<Clients>().Any())
+            if (Application.Current.Windows.OfType<Bookings>().Any())
             {
                 Bookings window = Application.Current.Windows.OfType<Bookings>().First();
                 window.Activate();
             }
             else
             {
-                Bookings window = new Bookings();
+                Bookings window = new Bookings(this);
                 window.Show();
+                EBooking.IsEnabled = false;
             }
+        }
+
+        private void ETools_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("1. C# Programming language \n \n2. WPF Library", "Tools");
+        }
+
+        private void EClear_Click(object sender, RoutedEventArgs e)
+        {
+            tb_TourID.Clear();
+            tb_Destination.Clear();
+            tb_Price.Clear();
+            DP_EndDate.SelectedDate = null;
+            DP_StartDate.SelectedDate = null;
+            dg.ItemsSource = null;
         }
 
         private void EClients_Click(object sender, RoutedEventArgs e)
@@ -318,8 +339,9 @@ namespace hntshd
             }
             else
             {
-                Clients window = new Clients();
+                Clients window = new Clients(this);
                 window.Show();
+                EClients.IsEnabled = false;
             }
         }
     }

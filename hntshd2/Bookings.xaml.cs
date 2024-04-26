@@ -36,7 +36,8 @@ namespace hntshd
         public FirstRecord3(int BookingID, int ClientID, int TourID, DateTime BookingDate)
 
         {
-            this.BookingID = TourID;
+            ///ошибка братик ошибка исправь пожалуйста 
+            this.BookingID = BookingID;
 
             this.ClientID = ClientID;
 
@@ -56,15 +57,15 @@ namespace hntshd
 
         DataTable dt;
 
-        String ConnStr = $"Data Source= DESKTOP-1RVQ73F ; Database=Melnichenko; Integrated Security=True; TrustServerCertificate=True";
+        String ConnStr = $"Data Source= {GetSomeRest.datasourse} ; Database=Melnichenko; Integrated Security=True; TrustServerCertificate=True";
 
         String SelectText = "Select * From Bookings ";
         String InsertText = "Insert Into Bookings Values " +
              " ( @BookingID , @ClientID , @TourID , @BookingDate ) ";
-        String UpdateText = "Update Melnichenko Set " +
+        String UpdateText = "Update Bookings Set " +
                   " ClientID = @ClientID , " +
                   " TourID = @TourID , " +
-                  " BookingDate = @BookingDate , " +
+                  " BookingDate = @BookingDate  " +
                   " Where BookingID = @BookingID ";
         String DeleteText = "Delete From Bookings " +
                     " Where BookingID = @BookingID";
@@ -76,49 +77,43 @@ namespace hntshd
         List<FirstRecord3> FirstRecordList;
 
         int i, n;
-        public Bookings()
+
+        WindowUser windowUser;
+        public Bookings(WindowUser windowUser)
         {
             InitializeComponent();
+            this.windowUser = windowUser;
         }
         void Refresh()
         {
-
             dg.ItemsSource = null;
 
             conn = new SqlConnection();
-
             conn.ConnectionString = ConnStr;
 
             cmd = new SqlCommand();
-
             cmd.Connection = conn;
-
             cmd.CommandText = SelectText;
 
             adapter = new SqlDataAdapter();
-
             adapter.SelectCommand = cmd;
 
             dt = new DataTable();
-
             FirstRecordList = new List<FirstRecord3>();
 
             adapter.Fill(dt);
 
-            for (i = 0; i <= dt.Rows.Count - 1; i++)
-
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
                 FirstRecordList.Add(new FirstRecord3((int)dt.Rows[i][0],
-                                            (int)dt.Rows[i][1],
-                                            (int)dt.Rows[i][2],
-                                            (DateTime)dt.Rows[i][3]
-                                          )
-                              );
+                                                     (int)dt.Rows[i][1],
+                                                     (int)dt.Rows[i][2],
+                                                     (DateTime)dt.Rows[i][3]
+                                                    ));
+            }
 
             dg.ItemsSource = FirstRecordList;
 
-            FirstRecordList = null;
-
-            GC.Collect();
         }
         private void ESelect_Click(object sender, RoutedEventArgs e)
         {
@@ -142,9 +137,9 @@ namespace hntshd
 
             cmd.CommandText = InsertText;
 
-            cmd.Parameters.Add("@BookingID", SqlDbType.Int).Value = int.Parse(tb_ClientID.Text);
+            cmd.Parameters.Add("@BookingID", SqlDbType.Int).Value = int.Parse(tb_BookingID.Text);
             cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value = int.Parse(tb_ClientID.Text);
-            cmd.Parameters.Add("@TourID", SqlDbType.Int).Value = int.Parse(tb_ClientID.Text);
+            cmd.Parameters.Add("@TourID", SqlDbType.Int).Value = int.Parse(tb_TourID.Text);
             cmd.Parameters.Add("@BookingDate", SqlDbType.Date).Value = DP_BookingDate.Text;
             DataTable dt = new DataTable();
             using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
@@ -156,67 +151,73 @@ namespace hntshd
                 adapter.InsertCommand = cmd;
                 adapter.Update(dt);
             }
+            Refresh();
         }
 
 
         private void EUpdate_Click(object sender, RoutedEventArgs e)
 
         {
-
-            conn = new SqlConnection();
-
-            conn.ConnectionString = ConnStr;
-
-            cmd = new SqlCommand();
-
-            cmd.Connection = conn;
-
-            cmd.CommandText = UpdateText;
-
-            adapter = new SqlDataAdapter();
-
-            adapter.SelectCommand = cmd;
-
-            dt = new DataTable();
-
-            cmd.Parameters.Add("@BookingID", SqlDbType.Int).Value = int.Parse(tb_BookingID.Text);
-            cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value = int.Parse(tb_ClientID.Text);
-            cmd.Parameters.Add("@TourID", SqlDbType.Int).Value = int.Parse(tb_ClientID.Text);
-            cmd.Parameters.Add("@BookingDate", SqlDbType.Date).Value = DP_BookingDate.Text;
-
-            adapter.Fill(dt);
-
-            int selectedIndex = dg.SelectedIndex;
-            if (selectedIndex >= 0 && selectedIndex < dt.Rows.Count)
+            try
             {
-                DataRow row = dt.Rows[selectedIndex];
+                conn = new SqlConnection();
 
+                conn.ConnectionString = ConnStr;
 
-                row["BookingID"] = int.Parse(tb_BookingID.Text);
-                row["ClientID"] = int.Parse(tb_ClientID.Text);
-                row["TourID"] = int.Parse(tb_TourID.Text);
-                row["BookingDate"] = DP_BookingDate.Text;
+                cmd = new SqlCommand();
 
+                cmd.Connection = conn;
 
-                using (SqlDataAdapter adapter = new SqlDataAdapter(cmd)) //пасхалко
+                cmd.CommandText = UpdateText;
+
+                adapter = new SqlDataAdapter();
+
+                adapter.SelectCommand = cmd;
+
+                dt = new DataTable();
+
+                cmd.Parameters.Add("@BookingID", SqlDbType.Int).Value = int.Parse(tb_BookingID.Text);
+                cmd.Parameters.Add("@ClientID", SqlDbType.Int).Value = int.Parse(tb_ClientID.Text);
+                cmd.Parameters.Add("@TourID", SqlDbType.Int).Value = int.Parse(tb_TourID.Text);
+                cmd.Parameters.Add("@BookingDate", SqlDbType.Date).Value = DP_BookingDate.Text;
+
+                adapter.Fill(dt);
+
+                int selectedIndex = dg.SelectedIndex;
+                if (selectedIndex >= 0 && selectedIndex < dt.Rows.Count)
                 {
-                    adapter.Fill(dt);
+                    DataRow row = dt.Rows[selectedIndex];
+
+
+                    row["BookingID"] = int.Parse(tb_BookingID.Text);
+                    row["ClientID"] = int.Parse(tb_ClientID.Text);
+                    row["TourID"] = int.Parse(tb_TourID.Text);
+                    row["BookingDate"] = DP_BookingDate.Text;
+
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd)) //пасхалко
+                    {
+                        adapter.Fill(dt);
+                    }
+
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter()) // пасхалко
+                    {
+                        adapter.InsertCommand = cmd;
+                        adapter.Update(dt);
+                    }
+
+
+                    Refresh();
                 }
-
-
-                using (SqlDataAdapter adapter = new SqlDataAdapter()) // пасхалко
+                else
                 {
-                    adapter.InsertCommand = cmd;
-                    adapter.Update(dt);
+                    MessageBox.Show("Изменения внесены.");
+                    Refresh();
                 }
-
-
-                Refresh();
             }
-            else
-            {
-                MessageBox.Show("Изменения внесены.");
-            }
+            catch(Exception ex) { MessageBox.Show("" + ex); }
+           
         }
         private void EDelete_Click(object sender, RoutedEventArgs e)
         {
@@ -253,6 +254,21 @@ namespace hntshd
             Refresh();
 
         }
+
+        private void Window_Unloaded(object sender, RoutedEventArgs e)
+        {
+            windowUser.EBooking.IsEnabled = true;
+        }
+
+        private void EClear_Click(object sender, RoutedEventArgs e)
+        {
+            tb_BookingID.Clear();
+            tb_ClientID.Clear();
+            tb_TourID.Clear();
+            DP_BookingDate.SelectedDate = null;
+            dg.ItemsSource = null;
+        }
+
         private void dg_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             n = dg.SelectedIndex;
@@ -267,38 +283,7 @@ namespace hntshd
             DP_BookingDate.SelectedDate = (DateTime)dt.Rows[n][3];
 
         }
-        private void EAbout_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Data base Петренко 03-1ИСП", "Туристическая фирма");
-        }
-
-        private void EClients_Click(object sender, RoutedEventArgs e)
-        {
-            if (Application.Current.Windows.OfType<Clients>().Any())
-            {
-                Clients window = Application.Current.Windows.OfType<Clients>().First();
-                window.Activate();
-            }
-            else
-            {
-                Clients window = new Clients();
-                window.Show();
-            }
-        }
-
-        private void ETours_Click(object sender, RoutedEventArgs e)
-        {
-            if (Application.Current.Windows.OfType<WindowUser>().Any())
-            {
-                WindowUser window = Application.Current.Windows.OfType<WindowUser>().First();
-                window.Activate();
-            }
-            else
-            {
-                WindowUser window = new WindowUser();
-                window.Show();
-            }
-        }
+ 
     }
 
 }

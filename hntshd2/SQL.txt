@@ -1,0 +1,129 @@
+CREATE DATABASE Melnichenko;
+
+USE Melnichenko;
+
+CREATE TABLE Bookings (
+	BookingID INT PRIMARY KEY,
+	ClientID INT NOT NULL,
+	TourID INT NOT NULL,
+	BookingDate DATE NOT NULL,
+ CONSTRAINT FK_Clients FOREIGN KEY (ClientID) REFERENCES Clients(ClientID),
+ CONSTRAINT FK_Tours FOREIGN KEY (TourID) REFERENCES Tours(TourID)
+);
+
+CREATE TABLE Clients(
+	ClientID INT PRIMARY KEY,
+	Name VARCHAR(50) NOT NULL,
+	Email VARCHAR(50) NOT NULL,
+	Phone VARCHAR(15) NOT NULL,
+);
+
+CREATE TABLE Tours (
+    TourID INT PRIMARY KEY ,
+    Destination VARCHAR(50) NOT NULL,
+    StartDate DATE NOT NULL,
+    EndDate DATE NOT NULL,
+    Price DECIMAL(10, 2) NOT NULL,
+);
+
+
+INSERT INTO Clients (ClientID, Name, Email, Phone)
+VALUES (1, 'Name1', 'example@gmail.com', '+785656781488'),
+       (2, 'Name2', 'example@gmail.com', '+785656781488'),
+       (3, 'Name3', 'example@gmail.com', '+785656781488'),
+       (4, 'Name4', 'example@gmail.com', '+785656781488'),
+       (5, 'Name5', 'example@gmail.com', '+785656781488'),
+       (6, 'Name6', 'example@gmail.com', '+785656781488'),
+       (7, 'Name7', 'example@gmail.com', '+785656781488'),
+       (8, 'Name8', 'example@gmail.com', '+785656781488'),
+       (9, 'Name9', 'example@gmail.com', '+785656781488'),
+       (10, 'Name10', 'example@gmail.com', '+785656781488');
+
+INSERT INTO Tours (TourID, Destination, StartDate, EndDate, Price)
+VALUES (1, 'osfhgosuh', '04.04.2004', '05.05.2005', 45678),
+       (2, 'sdvdsd', '04.04.2004', '05.05.2005', 443534),
+       (3, 'sdgsgfcxv', '04.04.2004', '05.05.2005', 53454),
+       (4, 'egthrghtg', '04.04.2004', '05.05.2005', 345345),
+       (5, 'bgtynygf', '04.04.2004', '05.05.2005', 532345),
+       (6, 'dffghjdfbji', '04.04.2004', '05.05.2005', 3454323),
+       (7, 'rhugbufnvf', '04.04.2004', '05.05.2005', 532345),
+       (8, 'jkfbvifbj', '04.04.2004', '05.05.2005', 34523434),
+       (9, 'jknvnjfjnnj', '04.04.2004', '05.05.2005', 5324345),
+       (10, 'gfdjbuiiud', '04.04.2004', '05.05.2005', 5376487);
+
+INSERT INTO Bookings (BookingID, ClientID, TourID, BookingDate)
+VALUES (1, 1, 1, '05.06.2007'),
+       (2, 2, 2, '07.08.2005'),
+       (3, 3, 3, '11.11.2016'),
+       (4, 4, 4, '07.08.2005'),
+       (5, 5, 5, '07.08.2005'),
+       (6, 6, 6, '07.08.2005'),
+       (7, 7, 7, '07.08.2005'),
+       (8, 8, 8, '07.08.2005'),
+       (9, 9, 9, '07.08.2005'),
+       (10, 10, 10, '07.08.2005');
+
+SELECT * FROM Bookings;
+
+SELECT * FROM Clients;
+
+SELECT * FROM Tours;
+
+
+
+UPDATE Bookings
+SET 
+    BookingID = 1,
+    ClientID = 1,
+    TourID = 1,
+    BookingDate = '07.07.2007'
+WHERE BookingID = 1;
+
+UPDATE Clients
+SET 
+    ClientID = 1,
+    Name = 'Melnichenko',
+    Email = 'Melnichenko@melnik.ru',
+    Phone = '+778945739'
+WHERE ClientID = 1;
+
+UPDATE Tours
+SET 
+    TourID = 1,
+    Destination = 'bddfvuidff',
+    StartDate = '02.02.2006',
+    EndDate = '02.04.2006',
+    Price = 34739
+WHERE TourID = 1;
+
+DELETE FROM Bookings
+WHERE BookingID = 2;
+
+DELETE FROM Clients
+WHERE ClientID = 2;
+
+DELETE FROM Tours
+WHERE TourID = 2;
+
+
+Drop Table Bookings;
+
+Drop Table Clients;
+
+Drop Table Tours;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

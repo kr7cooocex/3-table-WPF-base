@@ -57,29 +57,30 @@ namespace hntshd
 
         DataTable dt;
 
-        String ConnStr = $"Data Source= DESKTOP-1RVQ73F ; Database=Melnichenko; Integrated Security=True; TrustServerCertificate=True";
+        String ConnStr = $"Data Source= {GetSomeRest.datasourse} ; Database=Melnichenko; Integrated Security=True; TrustServerCertificate=True";
 
         String SelectText = "Select * From Clients ";
         String InsertText = "Insert Into Clients Values " +
-             " ( @TourID , @Destination , @StartDate , @EndDate, @Price ) ";
+             " ( @ClientID , @Name , @Email , @Phone ) ";
         String UpdateText = "Update Clients Set " +
                   " Name = @Name , " +
                   " Email = @Email , " +
-                  " Phone = @Phone , " +
+                  " Phone = @Phone  " +
                   " Where ClientID = @ClientID ";
         String DeleteText = "Delete From Clients " +
                     " Where ClientID = @ClientID";
 
 
 
-
+        WindowUser windowUser;
 
         List<FirstRecord1> FirstRecordList;
 
         int i, n;
-        public Clients()
+        public Clients(WindowUser windowUser)
         {
             InitializeComponent();
+            this.windowUser = windowUser;
         }
         void Refresh()
         {
@@ -157,6 +158,7 @@ namespace hntshd
                 adapter.InsertCommand = cmd;
                 adapter.Update(dt);
             }
+            Refresh();
         }
 
 
@@ -217,6 +219,7 @@ namespace hntshd
             else
             {
                 MessageBox.Show("Изменения внесены.");
+                Refresh();
             }
         }
         private void EDelete_Click(object sender, RoutedEventArgs e)
@@ -254,6 +257,21 @@ namespace hntshd
             Refresh();
 
         }
+
+        private void Window_Unloaded(object sender, RoutedEventArgs e)
+        {
+            windowUser.EClients.IsEnabled = true;
+        }
+
+        private void EClear_Click(object sender, RoutedEventArgs e)
+        {
+            tb_ClientID.Clear();
+            tb_Name.Clear();
+            tb_Email.Clear();
+            tb_Phone.Clear();
+            dg.ItemsSource = null;
+        }
+
         private void dg_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             n = dg.SelectedIndex;
@@ -268,38 +286,10 @@ namespace hntshd
             tb_Phone.Text = (string)dt.Rows[n][3];
 
         }
-        private void EAbout_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Data base Петренко 03-1ИСП", "Туристическая фирма");
-        }
 
-        private void EBookings_Click(object sender, RoutedEventArgs e)
-        {
-            if (Application.Current.Windows.OfType<Bookings>().Any())
-            {
-                Bookings window = Application.Current.Windows.OfType<Bookings>().First();
-                window.Activate();
-            }
-            else
-            {
-                Bookings window = new Bookings();
-                window.Show();
-            }
-        }
 
-        private void EWindowUser_Click(object sender, RoutedEventArgs e)
-        {
-            if (Application.Current.Windows.OfType<WindowUser>().Any())
-            {
-                WindowUser window = Application.Current.Windows.OfType<WindowUser>().First();
-                window.Activate();
-            }
-            else
-            {
-                WindowUser window = new WindowUser();
-                window.Show();
-            }
-        }
+    
+
     }
 
 }
